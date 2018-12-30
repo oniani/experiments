@@ -16,13 +16,13 @@ linear_regression = tf.estimator.LinearRegressor(feature_columns=[column])
 train_input = tf.estimator.inputs.numpy_input_fn(
     x={'col': np.array(range(1, 11))},
     y=np.array(range(11, 21)), shuffle=False, num_epochs=None)
-linear_regression.train(train_input, steps=2500)  # 2500 training iterations
+linear_regression.train(train_input, steps=3250)
 
-# Make two predictions
+# Make two predictions based on two inputs
 predict_input = tf.estimator.inputs.numpy_input_fn(
-     x={'col': np.array([9.2, 11.4], dtype=np.float32)},
+     x={'col': np.array([9.2, 11.4], dtype=np.float64)},
      num_epochs=1, shuffle=False)
-results = linear_regression.predict(predict_input)
+results       = linear_regression.predict(predict_input)
 
 # Print result
 for result in results:
