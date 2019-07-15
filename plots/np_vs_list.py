@@ -23,9 +23,18 @@ plt.title("Python 'list' VS NumPy 'ndarray'")
 plt.xlabel("'list' space usage", color="blue", fontsize="12")
 plt.ylabel("'ndarray' space usage", color="blue", fontsize="12")
 
-plt.plot(list_plot_cords,    ndarray_plot_cords, c='orange', label="list VS ndarray")
-plt.plot(list(range(10000)), list_plot_cords,    c='red'   , label="list performance")
-plt.plot(list(range(10000)), ndarray_plot_cords, c='green' , label="ndarray performance")
+plt.plot(
+    list_plot_cords, ndarray_plot_cords, c="orange", label="list VS ndarray"
+)
+plt.plot(
+    list(range(10000)), list_plot_cords, c="red", label="list performance"
+)
+plt.plot(
+    list(range(10000)),
+    ndarray_plot_cords,
+    c="green",
+    label="ndarray performance",
+)
 
 plt.legend(loc="best")
 plt.show()

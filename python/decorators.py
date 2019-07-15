@@ -5,9 +5,14 @@ Decorators in Python
 
 def generalized_decorator(function):
     def wrapper(*args, **kwargs):
-        print("The function called {} is invoked!".format(function.__code__.co_name))
+        print(
+            "The function called {} is invoked!".format(
+                function.__code__.co_name
+            )
+        )
         function(*args, **kwargs)
         print("The function call has ended!")
+
     return wrapper
 
 
